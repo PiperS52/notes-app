@@ -13,7 +13,7 @@ class Note {
     var newarray = this.NoteList.map(myFunction);
 
     function myFunction(str) {
-      return str.slice(0,10);
+      return str.slice(0,21);
       }
       return newarray;
   }
