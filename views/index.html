@@ -18,16 +18,14 @@
       function getInputValue() {
         let noteContent = document.getElementById("input").value;
         note.createNote(noteContent);
-        console.log(note.getFullNoteList())
         document.getElementById("input").value = "";
+        let bulletPoint = document.getElementById("noteList");
+        let newEntry = note.getAbbrevNoteList().slice(-1)[0]
+        document.getElementById("noteList").insertAdjacentHTML('afterend', `<p>${newEntry}</p>`);
       }
 
-      document.addEventListener("DOMContentLoaded", function() {
-
-
-      });
-
-
+      // document.addEventListener("DOMContentLoaded", function() {
+      // });
 
     </script>
 
@@ -35,11 +33,10 @@
     <input type="text" id="input" placeholder="What's on your mind?" style="width: 300px; height: 200px; margin: 0 auto;"></textarea><br>
     <button type="button" onclick="getInputValue()" id="create">Create</button>
     <ul>
-      <li id="noteList"></li>
+      <h3 id="noteList">Notes:</h3>
     <ul>
 
   </body>
-
 
 
 </html>
