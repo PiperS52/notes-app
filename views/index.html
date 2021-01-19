@@ -19,6 +19,7 @@
         let noteContent = document.getElementById("input").value;
         note.createNote(noteContent);
         console.log(note.getFullNoteList())
+        document.getElementById("input").value = "";
       }
 
       document.addEventListener("DOMContentLoaded", function() {
