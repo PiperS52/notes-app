@@ -8,7 +8,34 @@
     <script src="../lib/bob.js"></script>
     <script src="../spec/testAppSpec.js"></script>
   </head>
+
   <body>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        let note = new Note();
+        let buttonClick = document.getElementById("create");
+        let noteContent = document.getElementById("input").value;
+        console.log(value);
+
+
+        // buttonClick.onclick = function() {
+        //   console.log(value);
+        //   note.createNote(noteContent);
+        //   console.log(note.getFullNoteList());
+        // };
+      });
+    </script>
+
+    <h1>Notes</h1>
+    <input type="text" id="input" placeholder="What's on your mind?" style="width: 300px; height: 200px; margin: 0 auto;"></textarea><br>
+    <button type="button" id="create">Create</button>
+    <ul>
+      <li id="noteList"></li>
+    <ul>
+
   </body>
+
+
+
 </html>
