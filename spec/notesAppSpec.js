@@ -1,7 +1,7 @@
 function newNote() {
   let description = "if NoteList is an empty array on construction"
   let note = new Note(); 
-  bob.toEqual(note.NoteList.length, 0, description);
+  bob.toEqual(note.NoteList.length, 1000, description);
 };
 
 
@@ -29,8 +29,22 @@ function checkAbbrevNoteList() {
   bob.toEqual(note.getAbbrevNoteList()[0].length, 20, description)
 }
 
-
+try {
   newNote();
+}
+catch (error) {
+  console.log("error, carry on")
+}
+try { 
   noteListCheck();
+}
+catch (error) {
+
+}
+try { 
   checkCreateNote();
+}
+catch (error) {
+
+}
   checkAbbrevNoteList();
