@@ -15,7 +15,7 @@ class Note {
     function abbreviate(str) {
       return str.slice(0,21);
       }
-      return newarray;
+      return newa;
   }
 
   createNote(text){
