@@ -1,7 +1,7 @@
 'use strict;'
 
 class Note {
-  constructor{
+  constructor() {
     this.NoteList = []
   }
 
