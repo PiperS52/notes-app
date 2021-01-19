@@ -10,9 +10,9 @@ class Note {
   }
 
   getAbbrevNoteList(){
-    var newarray = this.NoteList.map(myFunction);
+    var newarray = this.NoteList.map(abbreviate);
 
-    function myFunction(str) {
+    function abbreviate(str) {
       return str.slice(0,21);
       }
       return newarray;
