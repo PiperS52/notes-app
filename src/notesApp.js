@@ -13,9 +13,9 @@ class Note {
     var newarray = this.NoteList.map(abbreviate);
 
     function abbreviate(str) {
-      return str.slice(0,21);
+      return str.slice(0,20);
       }
-      return newa;
+      return newarray;
   }
 
   createNote(text){

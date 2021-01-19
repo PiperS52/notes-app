@@ -21,29 +21,16 @@ function checkCreateNote() {
   bob.toEqual(note.NoteList[0], "hello", description)
 }
 
-// function circleRadiusCheck() {
-//   let description = "if circle radius is 10 on construction"
-//   let circle = new Circle();
-//   bob.toEqual(circle.radius, 10, description);
-// };
-
-newNote();
-noteListCheck();
-checkCreateNote();
-// circleRadiusCheck();
+function checkAbbrevNoteList() {
+  let description = "it checks the Abbrev note array is working"
+  let note = new Note();
+  note.createNote("hello, I am a super long note, like way longer than 20c")
+  note.createNote("Whoah so am I, so weird, I'm also like a way long note")
+  bob.toEqual(note.getAbbrevNoteList()[0].length, 20, description)
+}
 
 
-// function circleTruth() {
-//   let description = "if property is true on construction"
-//   let circle = new Circle();
-//   bob.toEqual(circle.property, true, description);
-// };
-
-// function circleRadiusCheck() {
-//   let description = "if circle radius is 10 on construction"
-//   let circle = new Circle();
-//   bob.toEqual(circle.radius, 10, description);
-// };
-
-// circleTruth();
-// circleRadiusCheck();
+  newNote();
+  noteListCheck();
+  checkCreateNote();
+  checkAbbrevNoteList();
