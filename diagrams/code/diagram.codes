@@ -1,0 +1,6 @@
+#### Class Definition\
+CLASS "Notes" as Notes:
+"this.noteList = []"
+"getFullNoteList()"
+"getAbbrevNoteList()"
+"createNote()"
