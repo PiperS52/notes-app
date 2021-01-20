@@ -8,7 +8,38 @@
     <script src="../lib/bob.js"></script>
     <script src="../spec/testAppSpec.js"></script>
   </head>
+
   <body>
 
+    <script>
+
+      let note = new Note();
+
+      document.addEventListener("DOMContentLoaded", function() {
+
+        let button = document.getElementById("create")
+
+        button.addEventListener("click", function() {
+          let noteContent = document.getElementById("input").value;
+          note.createNote(noteContent);
+          document.getElementById("input").value = "";
+          let bulletPoint = document.getElementById("noteList");
+          let newEntry = note.getAbbrevNoteList().slice(-1)[0]
+          document.getElementById("noteList").insertAdjacentHTML('afterend', `<p>${newEntry}</p>`);
+        });
+
+      });
+
+    </script>
+
+    <h1>Notes</h1>
+    <input type="text" id="input" placeholder="What's on your mind?" style="width: 300px; height: 200px; margin: 0 auto;"></textarea><br>
+    <button type="button" id="create">Create</button>
+    <ul>
+      <h3 id="noteList">Notes:</h3>
+    <ul>
+
   </body>
+
+
 </html>
