@@ -1,6 +1,6 @@
 class Circle {
   constructor() {
-    this.property = true;
+    this.property = false;
     this.radius = 10;
   }
 }
