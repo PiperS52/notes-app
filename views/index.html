@@ -15,23 +15,26 @@
 
       let note = new Note();
 
-      function getInputValue() {
-        let noteContent = document.getElementById("input").value;
-        note.createNote(noteContent);
-        document.getElementById("input").value = "";
-        let bulletPoint = document.getElementById("noteList");
-        let newEntry = note.getAbbrevNoteList().slice(-1)[0]
-        document.getElementById("noteList").insertAdjacentHTML('afterend', `<p>${newEntry}</p>`);
-      }
+      document.addEventListener("DOMContentLoaded", function() {
 
-      // document.addEventListener("DOMContentLoaded", function() {
-      // });
+        let button = document.getElementById("create")
+
+        button.addEventListener("click", function() {
+          let noteContent = document.getElementById("input").value;
+          note.createNote(noteContent);
+          document.getElementById("input").value = "";
+          let bulletPoint = document.getElementById("noteList");
+          let newEntry = note.getAbbrevNoteList().slice(-1)[0]
+          document.getElementById("noteList").insertAdjacentHTML('afterend', `<p>${newEntry}</p>`);
+        });
+
+      });
 
     </script>
 
     <h1>Notes</h1>
     <input type="text" id="input" placeholder="What's on your mind?" style="width: 300px; height: 200px; margin: 0 auto;"></textarea><br>
-    <button type="button" onclick="getInputValue()" id="create">Create</button>
+    <button type="button" id="create">Create</button>
     <ul>
       <h3 id="noteList">Notes:</h3>
     <ul>
