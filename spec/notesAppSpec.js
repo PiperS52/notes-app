@@ -1,50 +1,47 @@
+'use strict;'
+
 function newNote() {
-  let description = "if NoteList is an empty array on construction"
-  let note = new Note(); 
-  bob.toEqual(note.NoteList.length, 1000, description);
+  let note = new Note();
+  it("NoteList is an empty array on construction", function(){
+    Bobexpects(note.NoteList.length).toEqual(0);
+  })
+};
+
+function noteListCheck() {
+  let note = new Note();
+  it("getFullNoteList returns the full content of NoteList", function(){
+    note.createNote("Helloooooo");
+    note.createNote("k bye");
+    Bobexpects(note.getFullNoteList().length).toEqual(2);
+  })
+};
+
+function checkCreateNote() {
+  let note = new Note();
+  it("it checks the createNote function", function(){
+    note.createNote("hello");
+    Bobexpects(note.NoteList.length).toEqual(1);
+  })
+
+  let noteOne = new Note();
+  let noteTwo = new Note();
+  it("it checks that createNote adds a new entry to NoteList", function(){
+    noteOne.createNote("hello");
+    Bobexpects(noteOne.NoteList.length).toBeGreaterThan(noteTwo.NoteList.length);
+  })
+};
+
+function checkAbbrevNoteList() {
+  let note = new Note();
+  it("it checks the Abbrev note array is working", function(){
+    note.createNote("hello, I am a super long note, like way longer than 20c");
+    Bobexpects(note.getAbbrevNoteList()[0].length).toEqual(20);
+  })
 };
 
 
-function noteListCheck() {
-  let description = "it returns the full note list"
-  let note = new Note();
-  note.createNote("Helloooooo")
-  note.createNote("k bye")
-  var x = note.getFullNoteList();
-  bob.toEqual(note.getFullNoteList().length, 2 , description )
-}
-
-function checkCreateNote() {
-  let description = "it checks the createNote function"
-  let note = new Note();
-  note.createNote("hello")
-  bob.toEqual(note.NoteList[0], "hello", description)
-}
-
-function checkAbbrevNoteList() {
-  let description = "it checks the Abbrev note array is working"
-  let note = new Note();
-  note.createNote("hello, I am a super long note, like way longer than 20c")
-  note.createNote("Whoah so am I, so weird, I'm also like a way long note")
-  bob.toEqual(note.getAbbrevNoteList()[0].length, 20, description)
-}
-
-try {
-  newNote();
-}
-catch (error) {
-  console.log("error, carry on")
-}
-try { 
-  noteListCheck();
-}
-catch (error) {
-
-}
-try { 
-  checkCreateNote();
-}
-catch (error) {
-
-}
-  checkAbbrevNoteList();
+newNote();
+noteListCheck();
+checkCreateNote();
+checkCreateNote();
+checkAbbrevNoteList();
