@@ -39,28 +39,7 @@ function checkAbbrevNoteList() {
   })
 };
 
-// try {
-//   newNote();
-// }
-// catch (error) {
-//   console.log("error")
-// }
-// try {
-//   noteListCheck();
-// }
-// catch (error) {
-//
-// }
-// try {
-//   checkCreateNote();
-// }
-// catch (error) {
-//
-// }
-// checkAbbrevNoteList();
 
-
-//
 newNote();
 noteListCheck();
 checkCreateNote();
