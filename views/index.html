@@ -6,6 +6,7 @@
     <script src="../src/notesApp.js"></script>
     <script src="../lib/bob.js"></script>
     <script src="../spec/notesAppSpec.js"></script>
+    <script src="../src/emoji.js"></script>
   </head>
 
   <body>
@@ -24,9 +25,25 @@
           document.getElementById("input").value = "";
           let bulletPoint = document.getElementById("noteList");
           let newEntry = note.getAbbrevNoteList().slice(-1)[0]
-          document.getElementById("noteList").insertAdjacentHTML('afterend', `<p>${newEntry}</p>`);
-        });
 
+          fetch('https://makers-emojify.herokuapp.com/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              text: newEntry
+            })
+          })
+          .then(res => {
+            console.log(res)
+            return res.json()
+          })
+          .then(data => {
+            console.log(data)
+            document.getElementById("noteList").insertAdjacentHTML('afterend', `<p>${data.emojified_text}</p>`);
+          })
+        });
       });
 
     </script>
