@@ -27,7 +27,6 @@
           let noteContent = document.getElementById("input").value;
           note.createNote(noteContent);
           document.getElementById("input").value = "";
-          let bulletPoint = document.getElementById("noteList");
           let newEntry = note.getAbbrevNoteList().slice(-1)[0]
 
           fetch('https://makers-emojify.herokuapp.com/', {
@@ -45,9 +44,16 @@
           })
           .then(data => {
             console.log(data)
-            document.getElementById("noteList").insertAdjacentHTML('afterend', `<p>${data.emojified_text}</p>`);
+            document.getElementById("noteList").insertAdjacentHTML('afterend', `<a href="#${note.getFullNoteList().length-1}">${data.emojified_text}</a><br>`);
           })
         });
+
+        window.addEventListener("hashchange", function() {
+          let index = location.hash.split("#")[1];
+          let fullNote = note.getFullNoteList()[index]
+          document.getElementById("fullNoteDisplay").innerHTML = `${fullNote}`
+        });
+
       });
 
     </script>
@@ -63,11 +69,11 @@
     <div>
     <input type="text" id="input" placeholder="What's on your mind?" style="width: 400px; height: 100px; margin: 0 auto; text-align: center;"></textarea><br>
     <button type="button" id="create">Create</button>
+
+    <h2 id="noteList">Notes:</h2>
+    <div id="fullNoteDisplay"></div>
     </div>
 
-    <div>
-     <h3 id="noteList">Notes:</h3>
-    </div>
 
   </body>
 
