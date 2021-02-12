@@ -22,5 +22,4 @@ class Note {
     this.NoteList.push(text);
   }
 
-
 }
