@@ -1,5 +1,7 @@
 # Notes App
 
+![](images/Notes-Screenshot.png)
+
 ## Brief
 
 The purpose of this project was to build a frontend, single-page web app using only Vanilla JavaScript, making requests to use data from an external API, while also extracting out a new testing framework from the app - without using any existing libraries.
@@ -44,5 +46,3 @@ Or run on a local server, such as http-server:
 $ npm install --global http-server
 $ http-server ./
 ```
-
-![](images/Notes-Screenshot.png)
