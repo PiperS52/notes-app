@@ -44,3 +44,5 @@ Or run on a local server, such as http-server:
 $ npm install --global http-server
 $ http-server ./
 ```
+
+![](images/Notes-Screenshot.png)
