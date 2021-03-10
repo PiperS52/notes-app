@@ -46,3 +46,7 @@ Or run on a local server, such as http-server:
 $ npm install --global http-server
 $ http-server ./
 ```
+## Contributions
+
+Many thanks to the rest of the team:<br/>
+[Will Helliwell](https://github.com/Will-Helliwell), [Irina Giosanu](https://github.com/IrinaG29), [Sarah Power](https://github.com/SarahJoniPower), and [Will Dixon](https://github.com/WillDixon93)
